@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    username: postgres
+    password: postgres
+    url: jdbc:postgresql://localhost:30032/users
+    hikari:
+      maximum-pool-size: 3
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc.lob.non_contextual_creation: true
+        enable_lazy_load_no_trans: true
+        current_session_context_class: thread
+        generate_statistics: true
+    hibernate:
+      ddl-auto: create-drop
+  elasticsearch:
+    rest:
+      username: elastic
+      password: elastic
+      uris: "http://localhost:30001"
+
